@@ -1,7 +1,7 @@
 I want to generate tendo posts as quickly and easily as possible
 
 Taking as few parameters from the user as possible, the tool should:
-  1. Upload the podcast asset to AWS or Azure
+  ---- 1. Upload the podcast asset to AWS or Azure
   2. Create the markdown (post) file, with the correct title
   3. Fill in the post's title and description based on my arguments
   4. Fill in the asset (byte) length and and duration
