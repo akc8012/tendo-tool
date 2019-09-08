@@ -1,11 +1,11 @@
 I want to generate tendo posts as quickly and easily as possible
 
 Taking as few parameters from the user as possible, the tool should:
-	1. Upload the podcast asset to AWS or Azure
-	2. Create the markdown (post) file, with the correct title
-	3. Fill in the post's title and description based on my arguments
-	4. Fill in the asset (byte) length and and duration
-	5. Link the asset on the post (after waiting for asset upload?)
-	6. Make the commit and push
+  1. Upload the podcast asset to AWS or Azure
+  2. Create the markdown (post) file, with the correct title
+  3. Fill in the post's title and description based on my arguments
+  4. Fill in the asset (byte) length and and duration
+  5. Link the asset on the post (after waiting for asset upload?)
+  6. Make the commit and push
   7. (OPTIONAL) Get stitcher embedded in the post
   8. (OPTIONAL) Link each platform/app on the post somehow
