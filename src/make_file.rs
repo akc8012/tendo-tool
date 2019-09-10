@@ -10,14 +10,14 @@ pub fn make(path: &str, text: &str) {
 	write_to_file(path, file, text);
 }
 
-fn create_file(path: &std::path::Path) -> std::fs::File {
+fn create_file(path: &Path) -> File {
 	match File::create(&path) {
 		Err(why) => panic!("Couldn't create {}: {}", path.display(), why.description()),
 		Ok(file) => file,
 	}
 }
 
-fn write_to_file(path: &std::path::Path, mut file: std::fs::File, text: &str) {
+fn write_to_file(path: &Path, mut file: File, text: &str) {
 	match file.write_all(text.as_bytes()) {
 		Err(why) => panic!(
 			"Couldn't write to {}: {}",
