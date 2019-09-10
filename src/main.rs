@@ -1,9 +1,12 @@
-use std::env;
-mod make_file;
+use std::fs;
+mod build_file;
 
 fn main() {
-	let arguments: Vec<String> = env::args().collect();
-	println!("{:?}", arguments);
+	let filename = String::from("in/template.md");
+	println!("In file {}", filename);
 
-	make_file::make("out/yeet.txt", "yeet to the max!");
+	let template = fs::read_to_string(filename).expect("Something went wrong reading the file");
+	println!("{}", template);
+
+	build_file::make("out/post.md", &template);
 }
