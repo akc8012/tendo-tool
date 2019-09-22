@@ -10,3 +10,7 @@ Taking as few parameters from the user as possible, the tool should:
   6. Make the commit and push
   7. (OPTIONAL) Get stitcher embedded in the post
   8. (OPTIONAL) Link each platform/app on the post somehow
+
+Notes:
+  We could append to a static asset_id of "tendos-ep[?]" 
+
