@@ -24,4 +24,8 @@ with open(path) as file:
 
 		front_matter[key] = value
 
-print(front_matter)
+# print(front_matter)
+
+output = open(os.path.join(script_path, '../out/extremee.md'), 'a')
+output.write('dank')
+output.close()
