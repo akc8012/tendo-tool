@@ -1,27 +1,37 @@
 import os
 
-script_path = os.path.dirname(__file__)
-template_path = '../assets/template.md'
+class FrontMatter:
+	def read_template(self):
+		script_path = os.path.dirname(__file__)
+		template_path = '../assets/template.md'
 
-path = os.path.join(script_path, template_path)
+		path = os.path.join(script_path, template_path)
 
-front_matter = {}
-dash_line_count = 0
+		with open(path) as f:
+			return f.read().splitlines()
 
-with open(path) as file:
-	for line in file:
-		line = line.strip()
-		if line == '---':
-			dash_line_count += 1
-			if dash_line_count == 1:
-				continue
-			elif dash_line_count == 2:
-				break
+	def go(self, file):
+		front_matter = {}
+		dash_line_count = 0
 
-		key, value = line.split(':')
-		key = key.strip()
-		value = value.strip()
+		for line in file:
+			line = line.strip()
+			if line == '---':
+				dash_line_count += 1
+				if dash_line_count == 1:
+					continue
+				elif dash_line_count == 2:
+					break
 
-		front_matter[key] = value
+			key, value = line.split(':')
+			key = key.strip()
+			value = value.strip()
 
-print(front_matter)
+			front_matter[key] = value
+
+		return front_matter
+
+
+front_matter = FrontMatter()
+file = front_matter.read_template()
+print(front_matter.go(file))
